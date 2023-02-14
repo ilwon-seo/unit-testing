@@ -95,7 +95,7 @@ public class AddressTest {
 
 		@Test
 		public void testToString() {
-			assertThat(address.toString(), is("Address{9839 Carlisle Boulevard NE, Albuquerque, NM, 87110}"));
+			assertThat(address.toString(), is("Address(address1=9839 Carlisle Boulevard NE, city=Albuquerque, state=NM, zip=87110)"));
 		}
 	}
 }

@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 import com.google.common.collect.ComparisonChain;
 
-public class Address implements Serializable, Comparable<Address> {
+import lombok.Data;
+
+public @Data class Address implements Serializable, Comparable<Address> {
 
 	private static final long serialVersionUID = 1L;
 	private final String address1;
@@ -17,22 +19,6 @@ public class Address implements Serializable, Comparable<Address> {
 		this.city = builder.city;
 		this.state = builder.state;
 		this.zip = builder.zip;
-	}
-
-	public String getAddress1() {
-		return address1;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public String getZip() {
-		return zip;
 	}
 
 	@Override
@@ -56,11 +42,6 @@ public class Address implements Serializable, Comparable<Address> {
 	@Override
 	public int hashCode() {
 		return com.google.common.base.Objects.hashCode(getAddress1(), getCity(), getCity(), getState(), getZip());
-	}
-
-	@Override
-	public String toString() {
-		return com.google.common.base.MoreObjects.toStringHelper(this).addValue(getAddress1()).addValue(getCity()).addValue(getState()).addValue(getZip()).toString();
 	}
 
 	public static class Builder {
